@@ -2,13 +2,13 @@ package main
 
 import (
 	"math/rand"
-	"os/exec"
+	"syscall"
 	"time"
 )
 
 func main() {
 	go func() {
-		exec.Command("echo").Run()
+		syscall.ForkExec("echo", []string{}, &syscall.ProcAttr{})
 	}()
 	time.Sleep(time.Duration(rand.Intn(20)) * time.Millisecond)
 }
