@@ -12,3 +12,5 @@ Run `./test_race` to create a binary with a random name, run the binary a bunch 
 created by that binary. It often takes several attemtpts to get a reproduction.
 
 Run `kill_repros` to kill all of the hanging processes, which each take 90-100% CPU.
+
+Related github issue: https://github.com/golang/go/issues/53863
