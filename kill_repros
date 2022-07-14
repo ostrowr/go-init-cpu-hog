@@ -1,0 +1,2 @@
+#!/bin/zsh
+ps aux | grep '[r]epro' | awk '{print $2}' | xargs -r kill -9
