@@ -5,5 +5,5 @@ set -v
 output="repro-$RANDOM"
 go build -o $output main.go
 for i in $(seq 500); do "./$output" &; done
-sleep 3
+sleep 2
 ps aux | grep "($output)" | grep -v "grep"

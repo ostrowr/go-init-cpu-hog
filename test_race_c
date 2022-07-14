@@ -1,0 +1,8 @@
+#!/bin/zsh
+# exits 0 if it could replicate, 1 if it couldn't
+set -v
+output="repro-$RANDOM"
+clang -o $output forkexec.c
+for i in $(seq 500); do "./$output" &; done
+sleep 2
+ps aux | grep "($output)" | grep -v "grep"
